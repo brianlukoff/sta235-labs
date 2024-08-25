@@ -6,7 +6,7 @@ check_numeric <- function(user_answer, target_value, tolerance) {
 }
 
 check_multiple_choice <- function(user_answer, target_value) {
-  return(trimws(tolower(user_answer)) == trim(tolower(target_value)))
+  return(trimws(tolower(user_answer)) == trimws(tolower(target_value)))
 }
 
 # Lab 1 - Inference for regression
