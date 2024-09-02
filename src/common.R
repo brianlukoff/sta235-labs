@@ -5,8 +5,17 @@ check_numeric <- function(user_answer, target_value, tolerance) {
   return(abs(user_answer - target_value) <= tolerance)
 }
 
+check_numeric_pair <- function(user_answer, target_value_1, target_value_2, tolerance) {
+  return(abs(user_answer - target_value_1) <= tolerance && abs(user_answer - target_value_2) <= tolerance)
+}
+
+
 check_multiple_choice <- function(user_answer, target_value) {
   return(trimws(tolower(user_answer)) == trimws(tolower(target_value)))
+}
+
+check_tf <- function(user_answer, target_value) {
+  return(user_answer == target_value)
 }
 
 # Lab 1 - Inference for regression
@@ -51,7 +60,6 @@ popeqn <- function(n, e){
   )
 }
 
-
 explore_se <- function(my_se){
   newdf <- NULL
   for (i in c(10,100,500)){
@@ -63,4 +71,71 @@ explore_se <- function(my_se){
     facet_wrap(~model)
 }
 
+# Lab 2 - Multiple regression
 
+lab_2_question_1a <- function(user_answer) {
+  if (check_tf(user_answer, F)) {
+    cat("Correct!")
+  } else {
+    cat("While this interpretation is mathematically OK, it doesn't really make sense because it talks about a 1-unit increase in AVG, which is unrealistic given that AVG is a proportion between 0 and 1.")
+  }
+}
+lab_2_question_1b <- function(user_answer) {
+  if (check_tf(user_answer, T)) {
+    cat("Correct!")
+  } else {
+    cat("Try plugging two different numbers in for AVG that differ by 0.01 (for example, 0.5 and 0.51). How much does R.G change by?")
+  }
+}
+lab_2_question_1c <- function(user_answer) {
+  if (check_tf(user_answer, F)) {
+    cat("Correct!")
+  } else {
+    cat("A large coefficient alone is not enough to determine whether it is statistically significant -- remember you would have to look at the confidence intervals for the coefficients too!")
+  }
+}
+lab_2_question_1d <- function(user_answer) {
+  if (check_tf(user_answer, T)) {
+    cat("Correct!")
+  } else {
+    cat("Do the same analysis you did above for AVG.")
+  }
+}
+lab_2_question_1e <- function(user_answer) {
+  if (check_tf(user_answer, T)) {
+    cat("Correct!")
+  } else {
+    cat("Look at the p-value or confidence interval for AVG.")
+  }
+}
+lab_2_question_1f <- function(user_answer) {
+  if (check_tf(user_answer, T)) {
+    cat("Correct!")
+  } else {
+    cat("Compare the sizes of the cofficients!")
+  }
+}
+
+lab_2_question_2 <- function(user_answer) {
+  if (check_numeric(user_answer, 0.92, 0.01)) {
+    cat("Correct!")
+  } else {
+    cat("Look at the 'Multiple R-squared' in the model output.")
+  }
+}
+
+lab_2_question_3 <- function(user_answer) {
+  if (check_numeric(user_answer, 5.43, 0.01)) {
+    cat("Correct!")
+  } else {
+    cat("Run a command like this: predict(model, list(AVG=___, OBP=___, SLG=___))")
+  }
+}
+
+lab_2_question_4 <- function(user_answer) {
+  if (check_numeric_pair(user_answer, 5.12, 5.75, 0.01)) {
+    cat("Correct!")
+  } else {
+    cat("Ask yourself: are we making a prediction for a single new observation, or the average Y of all observations with a particular combination of X values?")
+  }
+}
