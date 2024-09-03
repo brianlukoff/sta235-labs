@@ -5,8 +5,8 @@ check_numeric <- function(user_answer, target_value, tolerance) {
   return(abs(user_answer - target_value) <= tolerance)
 }
 
-check_numeric_pair <- function(user_answer, target_value_1, target_value_2, tolerance) {
-  return(abs(user_answer - target_value_1) <= tolerance && abs(user_answer - target_value_2) <= tolerance)
+check_numeric_pair <- function(user_answer_1, target_value_1, user_answer_2, target_value_2, tolerance) {
+  return(abs(user_answer_1 - target_value_1) <= tolerance && abs(user_answer_2 - target_value_2) <= tolerance)
 }
 
 
@@ -132,8 +132,8 @@ lab_2_question_3 <- function(user_answer) {
   }
 }
 
-lab_2_question_4 <- function(user_answer) {
-  if (check_numeric_pair(user_answer, 5.12, 5.75, 0.01)) {
+lab_2_question_4 <- function(user_answer_1, user_answer_2) {
+  if (check_numeric_pair(user_answer_1, 5.12, user_answer_2, 5.75, 0.01)) {
     cat("Correct!")
   } else {
     cat("Ask yourself: are we making a prediction for a single new observation, or the average Y of all observations with a particular combination of X values?")
