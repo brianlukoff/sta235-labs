@@ -139,3 +139,45 @@ lab_2_question_4 <- function(user_answer_1, user_answer_2) {
     cat("Ask yourself: are we making a prediction for a single new observation, or the average Y of all observations with a particular combination of X values?")
   }
 }
+
+# Lab 3
+
+lab_3_question_1 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "D")) {
+    cat("You got it! Professors with tenure are predicted to have an average evaluation score that is about 0.17 points less than professors without tenure. The confidence interval for tenureyes does not include 0 so the difference is statistically significant.")
+  } else {
+    cat("Use confint to create the confidence intervals -- is 0 inside the confidence interval for the tenure variable? Then look at the slope to determine whether professors with or without tenure tend to get higher ratings.")
+  }
+}
+  
+lab_3_question_2 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "D")) {
+    cat("Right! Even after controlling for beauty, the difference is still about 0.17 points and statistically significant. This means that the difference between tenured- and non-tenured professors can't be \"explained away\" by someone who claims that the reason for the difference is that nontenured professors are more attractive than tenured professors (and as we have previously seen, better-looking professors get better evaluations).")
+  } else {
+    cat("Use confint to create the confidence intervals -- is 0 inside the confidence interval for the tenure variable? Then look at the slope to determine whether, among professors at the same beauty level, professors with or without tenure tend to get higher ratings.")
+  }
+}
+
+lab_3_question_3 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "A")) {
+    cat("Right! The coefficient of 0.069 for classsmall indicates that, among professors of identical attractiveness and tenure status, those that teach small classes are predicted to have evaluation scores that are 0.069 points higher than those that teach large classes.")
+  } else {
+    cat("Try plugging in numbers for each variable, two times -- for example, plug in the same beauty and tenure status both times, but do it once for a small class and once for a large class.")
+  }
+}
+
+lab_3_question_4 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "C")) {
+    cat("Nice! Looking at the regression output, all else equal, small classes are expected to be 0.069 points higher than large classes, and medium classes are expected to be about 0.073 points lower than large classes. That means that we'd expect small classes to be about 0.069 + 0.073 = 0.142 points higher than medium classes.")
+  } else {
+    cat("Try plugging in numbers for each variable, two times -- for example, plug in the same beauty and tenure status both times, but do it once for a small class and once for a *medium* class.")
+  }
+}
+
+lab_3_question_5 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "A")) {
+    cat("Yup!")
+  } else {
+    cat("Put together what you found in the last two questions. (Drawing the three categories out on a number line might be helpful!)")
+  }
+}
