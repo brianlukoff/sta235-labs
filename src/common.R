@@ -181,3 +181,63 @@ lab_3_question_5 <- function(user_answer) {
     cat("Put together what you found in the last two questions. (Drawing the three categories out on a number line might be helpful!)")
   }
 }
+
+# Lab 4 - Interactions
+
+lab_4_question_1 <- function(user_answer) {
+  if (check_numeric(user_answer, 3.74, 0.01)) {
+    cat("Correct!")
+  } else {
+    cat("Write out the equation and plug in 0's or 1's as appropriate, or run a command like this: predict(model, list(gender=___, minority=___))")
+  }
+}
+
+lab_4_question_2 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "D")) {
+    cat("Yup!")
+  } else {
+    cat("Look at your table -- which cell matches this quantity?")
+  }
+}
+
+lab_4_question_3 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "F")) {
+    cat("Yup!")
+  } else {
+    cat("Look at your table -- which cell matches this quantity?")
+  }
+}
+
+lab_4_question_4 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "H")) {
+    cat("Yup!")
+  } else {
+    cat("Look at your table -- which cell matches this quantity?")
+  }
+}
+
+lab_4_question_5 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "I")) {
+    cat("Yup!")
+  } else {
+    cat("Look at your table -- which cell matches this quantity?")
+  }
+}
+
+lab_4_question_6 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "E")) {
+    cat("Got it!")
+  } else {
+    cat("Remember that when there is an interaction term between two variables A and B, the slope of A is the incremental impact on Y of each 1-unit change in A, when holding B constant AT ZERO.")
+  }
+}
+
+lab_4_question_7 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "A")) {
+    cat("That's it!")
+  } else {
+    cat("Write out the two equations and carefully substitute beauty = 2 or beauty = -2, and then simplify. Compare the slope of students for each!")
+  }
+}
+
+
