@@ -1,4 +1,7 @@
 library(tidyverse, quietly=TRUE)
+
+# This is not a default package on Colab.
+install.packages("ggfortify")
 library(ggfortify, quietly=TRUE)
 
 load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.Rdata"))
