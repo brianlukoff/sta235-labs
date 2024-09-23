@@ -1,4 +1,6 @@
 library(tidyverse, quietly=TRUE)
+library(ggfortify, quietly=TRUE)
+
 load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.Rdata"))
 
 check_numeric <- function(user_answer, target_value, tolerance) {
@@ -16,6 +18,11 @@ check_multiple_choice <- function(user_answer, target_value) {
 
 check_tf <- function(user_answer, target_value) {
   return(user_answer == target_value)
+}
+
+check_multiple_answer <- function(user_answer, target_value) {
+  return(setequal(trimws(tolower(user_answer)),
+                  trimws(tolower(target_value))))
 }
 
 # Lab 1 - Inference for regression
@@ -240,4 +247,75 @@ lab_4_question_7 <- function(user_answer) {
   }
 }
 
+lab_5_question_2 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("A"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the subplot in the top right corner.")
+  }
+}
 
+lab_5_question_3 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("A", "D"))) {
+    cat("That's it!")
+  } else {
+    cat("Consider the number of observations in the data set vs how many points appear unusual.")
+  }
+}
+
+lab_5_question_4 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("B", "C", "D"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the Scale-Location plot.")
+  }
+}
+
+lab_5_question_5 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("A"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the Residuals vs Leverage plot.")
+  }
+}
+
+lab_5_question_6 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("A"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the Residuals vs Leverage plot.")
+  }
+}
+
+
+lab_5_question_8 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("D"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the diagnostic plot and also think about how the data were collected.")
+  }
+}
+
+lab_5_question_9 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c("B", "C"))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the Scale-Location plot.")
+  }
+}
+
+lab_5_question_10 <- function(user_answer) {
+  if (check_multiple_answer(user_answer, c(""))) {
+    cat("That's it!")
+  } else {
+    cat("Look at the Residuals vs Leverage plot.")
+  }
+}
+
+lab_5_question_11 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, c("B"))) {
+    cat("That's it!")
+  } else {
+    cat("Recall the definition of influential observations.")
+  }
+}
