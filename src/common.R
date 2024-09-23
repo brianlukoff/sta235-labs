@@ -24,8 +24,8 @@ check_tf <- function(user_answer, target_value) {
 }
 
 check_multiple_answer <- function(user_answer, target_value) {
-  return(setequal(trimws(tolower(user_answer)),
-                  trimws(tolower(target_value))))
+  return(setequal(sort(str_split_1(gsub("[^A-Za-z]", "", toupper(user_answer)), "")),
+                  sort(toupper(target_value))))
 }
 
 # Lab 1 - Inference for regression
@@ -267,15 +267,15 @@ lab_5_question_3 <- function(user_answer) {
 }
 
 lab_5_question_4 <- function(user_answer) {
-  if (check_multiple_answer(user_answer, c("B", "C", "D"))) {
+  if (check_multiple_choice(user_answer, "C")) {
     cat("That's it!")
   } else {
-    cat("Look at the Scale-Location plot.")
+    cat("Look at the y-axis of the Scale-Location plot or the Residuals vs Leverage plot.")
   }
 }
 
 lab_5_question_5 <- function(user_answer) {
-  if (check_multiple_answer(user_answer, c("A"))) {
+  if (check_multiple_choice(user_answer, "A")) {
     cat("That's it!")
   } else {
     cat("Look at the Residuals vs Leverage plot.")
@@ -283,10 +283,10 @@ lab_5_question_5 <- function(user_answer) {
 }
 
 lab_5_question_6 <- function(user_answer) {
-  if (check_multiple_answer(user_answer, c("A"))) {
+  if (check_multiple_choice(user_answer, "A")) {
     cat("That's it!")
   } else {
-    cat("Look at the Residuals vs Leverage plot.")
+    cat("Look at the Residuals vs Leverage plot. Remember that influential = high residual + high leverage!")
   }
 }
 
@@ -308,7 +308,7 @@ lab_5_question_9 <- function(user_answer) {
 }
 
 lab_5_question_10 <- function(user_answer) {
-  if (check_multiple_answer(user_answer, c(""))) {
+  if (check_multiple_answer(user_answer, c("E"))) {
     cat("That's it!")
   } else {
     cat("Look at the Residuals vs Leverage plot.")
