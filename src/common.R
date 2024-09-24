@@ -300,7 +300,7 @@ lab_5_question_8 <- function(user_answer) {
 }
 
 lab_5_question_9 <- function(user_answer) {
-  if (check_multiple_answer(user_answer, c("B", "C"))) {
+  if (check_multiple_choice(user_answer, "C")) {
     cat("That's it!")
   } else {
     cat("Look at the Scale-Location plot.")
