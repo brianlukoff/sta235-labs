@@ -322,3 +322,43 @@ lab_5_question_11 <- function(user_answer) {
     cat("Recall the definition of influential observations.")
   }
 }
+
+lab_6_question_2 <- function(user_answer) {
+  if (check_tf(user_answer, "T")) {
+    cat("That's it!")
+  } else {
+    cat("Recreate the scatterplot to be sure.")
+  }
+}
+
+lab_6_question_3 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, c("ACD"))) {
+    cat("That's it!")
+  } else {
+    cat("Perhaps you are forgetting one or more assumptions?")
+  }
+}
+
+lab_6_question_4 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, c("C"))) {
+    cat("That's it!")
+  } else {
+    cat("What does each diagnostic plot tell you?")
+  }
+}
+
+lab_6_question_5 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, c("B"))) {
+    cat("That's it!")
+  } else {
+    cat("What does each diagnostic plot tell you?")
+  }
+}
+
+lab_6_question_6 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, c("E"))) {
+    cat("That's it!")
+  } else {
+    cat("Remember to convert back to dollars.")
+  }
+}
