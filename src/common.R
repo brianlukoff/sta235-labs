@@ -359,6 +359,6 @@ lab_6_question_6 <- function(user_answer) {
   if (check_multiple_choice(user_answer, c("F"))) {
     cat("That's it!")
   } else {
-    cat("Remember to convert back to dollars.")
+    cat("Remember to convert back to dollars and don't use an approximation.")
   }
 }
