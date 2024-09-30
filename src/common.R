@@ -341,7 +341,7 @@ lab_6_question_3 <- function(user_answer) {
 
 lab_6_question_4 <- function(user_answer) {
   if (check_multiple_choice(user_answer, c("C"))) {
-    cat("That's it!")
+    cat("Correct!")
   } else {
     cat("What does each diagnostic plot tell you?")
   }
@@ -356,7 +356,7 @@ lab_6_question_5 <- function(user_answer) {
 }
 
 lab_6_question_6 <- function(user_answer) {
-  if (check_multiple_choice(user_answer, c("E"))) {
+  if (check_multiple_choice(user_answer, c("F"))) {
     cat("That's it!")
   } else {
     cat("Remember to convert back to dollars.")
