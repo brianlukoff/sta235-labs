@@ -3,6 +3,7 @@ library(tidyverse, quietly=TRUE)
 # This is not a default package on Colab.
 install.packages("ggfortify")
 library(ggfortify, quietly=TRUE)
+options(scipen=999999)
 
 load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.RData"))
 
@@ -332,15 +333,15 @@ lab_6_question_2 <- function(user_answer) {
 }
 
 lab_6_question_3 <- function(user_answer) {
-  if (check_multiple_choice(user_answer, c("ACD"))) {
+  if (check_multiple_choice(user_answer, c("A"))) {
     cat("That's it!")
   } else {
-    cat("Perhaps you are forgetting one or more assumptions?")
+    cat("Remember that for linearity we're looking for no trend in the residual vs fitted plot.")
   }
 }
 
 lab_6_question_4 <- function(user_answer) {
-  if (check_multiple_choice(user_answer, c("C"))) {
+  if (check_multiple_choice(user_answer, c("A"))) {
     cat("Correct!")
   } else {
     cat("What does each diagnostic plot tell you?")
@@ -348,17 +349,17 @@ lab_6_question_4 <- function(user_answer) {
 }
 
 lab_6_question_5 <- function(user_answer) {
-  if (check_multiple_choice(user_answer, c("B"))) {
+  if (check_numeric(user_answer, 2885.849)) {
     cat("That's it!")
   } else {
-    cat("What does each diagnostic plot tell you?")
+    cat("Remember to convert back to dollars and don't use an approximation.")
   }
 }
 
 lab_6_question_6 <- function(user_answer) {
-  if (check_multiple_choice(user_answer, c("F"))) {
+  if (check_multiple_choice(user_answer, c("D"))) {
     cat("That's it!")
   } else {
-    cat("Remember to convert back to dollars and don't use an approximation.")
+    cat("Write out the equation, or try plugging in two values for Area that differ by 100.")
   }
 }
