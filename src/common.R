@@ -4,7 +4,7 @@ library(tidyverse, quietly=TRUE)
 install.packages("ggfortify")
 library(ggfortify, quietly=TRUE)
 
-load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.Rdata"))
+load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.RData"))
 
 check_numeric <- function(user_answer, target_value, tolerance) {
   return(abs(user_answer - target_value) <= tolerance)
