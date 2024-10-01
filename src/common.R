@@ -349,7 +349,7 @@ lab_6_question_4 <- function(user_answer) {
 }
 
 lab_6_question_5 <- function(user_answer) {
-  if (check_numeric(user_answer, 2885.849)) {
+  if (check_numeric(user_answer, 2885.849, 1)) {
     cat("That's it!")
   } else {
     cat("Remember to convert back to dollars and don't use an approximation.")
