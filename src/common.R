@@ -363,3 +363,6 @@ lab_6_question_6 <- function(user_answer) {
     cat("Write out the equation, or try plugging in two values for Area that differ by 100.")
   }
 }
+
+# lab 7
+source("https://github.com/brianlukoff/sta235-labs/raw/main/src/lab7.R")
