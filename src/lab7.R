@@ -1,7 +1,15 @@
+source("https://github.com/brianlukoff/sta235-labs/raw/main/src/common.R")
+install.packages("ggthemes")
+library(gridExtra)
+library(ggthemes, quietly=TRUE)
+
 set.seed(1022)
 ix = sample(1:nrow(utilities), 12)
 uin = utilities[-ix,]
 uout = utilities[ix,]
+
+sleep = sleep %>% filter(total_sleep_time<550 & total_sleep_time>195 & study != 1) %>% 
+  mutate(total_sleep_time = total_sleep_time/60)
 # lm1 <- lm(dailyspend~temp, data=uin)
 # lm2 <- lm(dailyspend ~ temp +I(temp^2), data=uin)
 # lm7 <- lm(dailyspend ~ temp + I(temp^2)+I(temp^3)+I(temp^4)+I(temp^5)+I(temp^6)+I(temp^7), data=uin)
@@ -61,6 +69,37 @@ lab_7_question_3 <- function(user_answer) {
     cat("Remember, the lower the RMSE, the smaller the error, the better the performance.")
   }
 }
+lab_7_question_4 <- function(user_answer) {
+  if (checktf(user_answer, F)) {
+    cat("You got it! Race does not seem to have an impact on sleep time")
+  } else {
+    cat("Look at the boxplot carefully, does race seem to impact sleep time?")
+  }
+}
+
+lab_7_question_5 <- function(user_answer) {
+  if (checktf(user_answer, T)) {
+    cat("You got it! Race does not seem to have an impact on cumulative gpa")
+  } else {
+    cat("Look at the boxplot carefully, does race seem to cumulative gpa?")
+  }
+}
+
+lab_7_question_6 <- function(user_answer) {
+  if (checktf(user_answer, F)) {
+    cat("You got it! First-generation does not seem to have an impact on sleep time")
+  } else {
+    cat("Look at the boxplot carefully, does first-generation seem to impact sleep time?")
+  }
+}
+
+lab_7_question_7 <- function(user_answer) {
+  if (checktf(user_answer, T)) {
+    cat("You got it! First-generation does not seem to have an impact on cumulative gpa")
+  } else {
+    cat("Look at the boxplot carefully, does first-generation seem to cumulative gpa?")
+  }
+}
 
 
 lab_7_RMSE <- function(pm, df) {
@@ -91,7 +130,3 @@ lab_7_RMSE <- function(pm, df) {
 # lab_7_RMSE(lm1, uin) # this should match what you had above
 # lab_7_RMSE(lm2, uin)
 # lab_7_RMSE(lm7, uin)
-
-
-
-      
