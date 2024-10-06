@@ -2,7 +2,9 @@ library(tidyverse, quietly=TRUE)
 
 # This is not a default package on Colab.
 install.packages("ggfortify")
+install.packages("ggthemes")
 library(ggfortify, quietly=TRUE)
+library(ggthemes, quietly=TRUE)
 options(scipen=999999)
 
 load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.RData"))

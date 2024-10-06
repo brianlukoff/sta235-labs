@@ -36,5 +36,62 @@ lab7_plot_utilities_poly <- function(lm1, lm2, lm7, newpts=FALSE){
   }
 }
 
+
+lab_7_question_1 <- function(user_answer) {
+  if (check_numeric(user_answer, 0.7871704777, 0.01)) {
+    cat("You got it!")
+  } else {
+    cat("That's not it -- Double check the steps of your RMSE calculation")
+  }
+}
+
+
+lab_7_question_2 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "B")) {
+    cat("You got it! The quadratic model had the lowest OOS RMSE.")
+  } else {
+    cat("Remember, the lower the RMSE, the smaller the error, the better the performance.")
+  }
+}
+
+lab_7_question_3 <- function(user_answer) {
+  if (check_multiple_choice(user_answer, "B")) {
+    cat("You got it! The quadratic model had the lowest OOS RMSE. The 7th order polynomial OVERFITS.")
+  } else {
+    cat("Remember, the lower the RMSE, the smaller the error, the better the performance.")
+  }
+}
+
+
+lab_7_RMSE <- function(pm, df) {
+  preds_oos <- predict(pm, df)
+  # You should see 12 numbers below, a prediction for every data point in uout
+  square_error <- (df$dailyspend - preds_oos)^2 # square the difference between actual and predicted
+  mean_square_error <- mean(square_error) # average the square error
+  root_mean_square_error <- sqrt(mean_square_error) # take the square root of the error
+  return (root_mean_square_error)
+}
+
+
 # lab7_plot_utilities_poly()
 # lab7_plot_utilities_poly(TRUE)
+# 
+# # Step 1 - predictions for the new data
+# preds_oos <- predict(lm1, uout)
+# # You should see 12 numbers below, a prediction for every data point in uout
+# preds_oos
+# actuals <- uout$dailyspend
+# square_error <- (actuals - preds_oos)^2 # square the difference between actual and predicted
+# mean_square_error <- mean(square_error) # average the square error
+# root_mean_square_error <- sqrt(mean_square_error) # take the square root of the error
+# paste("The RMSE is: ", round(root_mean_square_error,4))
+# lab_7_RMSE(lm1, uout) # this should match what you had above
+# lab_7_RMSE(lm2, uout)
+# lab_7_RMSE(lm7, uout)
+# lab_7_RMSE(lm1, uin) # this should match what you had above
+# lab_7_RMSE(lm2, uin)
+# lab_7_RMSE(lm7, uin)
+
+
+
+      
