@@ -36,5 +36,5 @@ lab7_plot_utilities_poly <- function(newpts=FALSE){
   }
 }
 
-lab7_plot_utilities_poly()
-lab7_plot_utilities_poly(TRUE)
+# lab7_plot_utilities_poly()
+# lab7_plot_utilities_poly(TRUE)
