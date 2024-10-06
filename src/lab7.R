@@ -6,7 +6,7 @@ uout = utilities[ix,]
 # lm2 <- lm(dailyspend ~ temp +I(temp^2), data=uin)
 # lm7 <- lm(dailyspend ~ temp + I(temp^2)+I(temp^3)+I(temp^4)+I(temp^5)+I(temp^6)+I(temp^7), data=uin)
 
-lab7_plot_utilities_poly <- function(newpts=FALSE){
+lab7_plot_utilities_poly <- function(lm1, lm2, lm7, newpts=FALSE){
   xgr = seq(min(utilities$temp), max(utilities$temp), length.out = 1000)
   newdat = data.frame(temp=xgr)
   
