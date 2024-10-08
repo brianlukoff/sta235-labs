@@ -72,33 +72,33 @@ lab_7_question_3 <- function(user_answer) {
 }
 lab_7_question_4 <- function(user_answer) {
   if (check_tf(user_answer, F)) {
-    cat("You got it! Race does not seem to have an impact on sleep time")
+    cat("You got it! Race does not seem to have an impact on sleep time\n")
   } else {
-    cat("Look at the boxplot carefully, does race seem to impact sleep time?")
+    cat("Look at the boxplot carefully, does race seem to impact sleep time?\n")
   }
 }
 
 lab_7_question_5 <- function(user_answer) {
   if (check_tf(user_answer, T)) {
-    cat("You got it! Race does not seem to have an impact on cumulative gpa")
+    cat("You got it! Race does not seem to have an impact on cumulative gpa\n")
   } else {
-    cat("Look at the boxplot carefully, does race seem to cumulative gpa?")
+    cat("Look at the boxplot carefully, does race seem to cumulative gpa?\n")
   }
 }
 
 lab_7_question_6 <- function(user_answer) {
   if (check_tf(user_answer, F)) {
-    cat("You got it! First-generation does not seem to have an impact on sleep time")
+    cat("You got it! First-generation does not seem to have an impact on sleep time\n")
   } else {
-    cat("Look at the boxplot carefully, does first-generation seem to impact sleep time?")
+    cat("Look at the boxplot carefully, does first-generation seem to impact sleep time?\n")
   }
 }
 
 lab_7_question_7 <- function(user_answer) {
   if (check_tf(user_answer, T)) {
-    cat("You got it! First-generation does not seem to have an impact on cumulative gpa")
+    cat("You got it! First-generation does not seem to have an impact on cumulative gpa \n")
   } else {
-    cat("Look at the boxplot carefully, does first-generation seem to cumulative gpa?")
+    cat("Look at the boxplot carefully, does first-generation seem to cumulative gpa? \n")
   }
 }
 
