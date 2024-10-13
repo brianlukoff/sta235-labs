@@ -1,6 +1,7 @@
 source("https://github.com/brianlukoff/sta235-labs/raw/main/src/common.R")
 install.packages("ggthemes")
-library(gridExtra)
+install.packages("gridExtra")
+library(gridExtra, quietly=TRUE)
 library(ggthemes, quietly=TRUE)
 
 set.seed(1022)
@@ -30,10 +31,10 @@ lab7_plot_utilities_poly <- function(lm1, lm2, lm7, newpts=FALSE){
       names_pattern = "(.)(.)"
     )
   if (!newpts){
-  ggplot(aes(x=temp, y=dailyspend), data=uin) + 
-    geom_point(color="lightgray") + 
-    geom_line(aes(x=temp, y=d, color=degree), data=preds) + 
-    scale_color_colorblind()
+    ggplot(aes(x=temp, y=dailyspend), data=uin) + 
+      geom_point(color="lightgray") + 
+      geom_line(aes(x=temp, y=d, color=degree), data=preds) + 
+      scale_color_colorblind()
   }
   else {
     ggplot(aes(x=temp, y=dailyspend), data=uin) + 
@@ -70,34 +71,34 @@ lab_7_question_3 <- function(user_answer) {
   }
 }
 lab_7_question_4 <- function(user_answer) {
-  if (checktf(user_answer, F)) {
-    cat("You got it! Race does not seem to have an impact on sleep time")
+  if (check_tf(user_answer, F)) {
+    cat("You got it! Race does not seem to have an impact on sleep time\n")
   } else {
-    cat("Look at the boxplot carefully, does race seem to impact sleep time?")
+    cat("Look at the boxplot carefully, does race seem to impact sleep time?\n")
   }
 }
 
 lab_7_question_5 <- function(user_answer) {
-  if (checktf(user_answer, T)) {
-    cat("You got it! Race does not seem to have an impact on cumulative gpa")
+  if (check_tf(user_answer, T)) {
+    cat("You got it! Race does not seem to have an impact on cumulative gpa\n")
   } else {
-    cat("Look at the boxplot carefully, does race seem to cumulative gpa?")
+    cat("Look at the boxplot carefully, does race seem to cumulative gpa?\n")
   }
 }
 
 lab_7_question_6 <- function(user_answer) {
-  if (checktf(user_answer, F)) {
-    cat("You got it! First-generation does not seem to have an impact on sleep time")
+  if (check_tf(user_answer, F)) {
+    cat("You got it! First-generation does not seem to have an impact on sleep time\n")
   } else {
-    cat("Look at the boxplot carefully, does first-generation seem to impact sleep time?")
+    cat("Look at the boxplot carefully, does first-generation seem to impact sleep time?\n")
   }
 }
 
 lab_7_question_7 <- function(user_answer) {
-  if (checktf(user_answer, T)) {
-    cat("You got it! First-generation does not seem to have an impact on cumulative gpa")
+  if (check_tf(user_answer, T)) {
+    cat("You got it! First-generation does not seem to have an impact on cumulative gpa \n")
   } else {
-    cat("Look at the boxplot carefully, does first-generation seem to cumulative gpa?")
+    cat("Look at the boxplot carefully, does first-generation seem to cumulative gpa? \n")
   }
 }
 
