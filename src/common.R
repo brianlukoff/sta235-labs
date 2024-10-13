@@ -6,7 +6,7 @@ library(ggfortify, quietly=TRUE)
 options(scipen=999999)
 
 
-load(url("https://github.com/brianlukoff/sta235-labs/raw/main/sta235.RData"))
+load(url("https://github.com/brianlukoff/sta235-labs/raw/refs/heads/main/sta235.RData"))
 
 check_numeric <- function(user_answer, target_value, tolerance) {
   return(abs(user_answer - target_value) <= tolerance)
